@@ -1,0 +1,869 @@
+
+/* 
+/* ==========================================================================
+   Hero Section (#home) Responsive Styles - REVISIONS
+   ========================================================================== */
+
+/* ... (keep all your previous responsive styles) ... */
+
+/* --- Specific adjustments for "FULL STACK DEVLOPER" --- */
+
+/* Container of "FULL STACK DEVLOPER" */
+#home .row.py-3.py-lg-0.custom-border-bottom-1:first-child .col > div[data-scroll] {
+    /* This div is the direct parent of the <strong> tag */
+    width: 100%; /* Ensure the data-scroll container takes full available width */
+    overflow: visible; /* Try to prevent internal clipping if the library does it */
+    display: block; /* Change from default if it's inline */
+}
+
+/* The "FULL STACK DEVLOPER" text itself */
+#home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
+    display: block; /* Or inline-block, critical for width and wrapping */
+    width: 100%;    /* Force it to try and fit within the container's width */
+    max-width: 100%; /* Redundant if width: 100% works, but safe */
+    white-space: normal !important; /* Re-iterate, most important rule */
+    overflow-wrap: break-word;
+    word-break: break-word; /* break all for very stubborn cases */
+    text-align: center; /* Center it if it wraps to multiple lines */
+    line-height: 1;     /* Make line height very tight for this specific text */
+    padding-left: 5px;  /* Add a tiny bit of padding so it's not flush against edges */
+    padding-right: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+
+/* --- Adjust font sizes more aggressively for this specific text at different breakpoints --- */
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    /* ... (other styles for this breakpoint) ... */
+
+    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
+        font-size: clamp(38px, 9vw, 80px); /* Slightly smaller max than general custom-hero-font-1 */
+        letter-spacing: -1.5px; /* More aggressive letter spacing */
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* ... (other styles for this breakpoint) ... */
+
+    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
+        font-size: clamp(30px, 10vw, 60px);
+        letter-spacing: -1px;
+        line-height: 0.95; /* Even tighter */
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    /* ... (other styles for this breakpoint) ... */
+
+    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
+        font-size: clamp(26px, 11vw, 50px); /* Make it significantly smaller */
+        letter-spacing: -0.5px;
+        line-height: 0.9; /* Very tight line height */
+    }
+    /* Ensure the container row has some minimal vertical padding */
+     #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+}
+
+/*
+   IMPORTANT: You should fix the typo in your HTML from "DEVLOPER" to "DEVELOPER".
+   If you do, update the CSS selectors accordingly:
+   Replace:
+   #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1
+   With:
+   #home .row:has(strong:contains("Full Stack Developer")) strong.custom-hero-font-1
+   (This :has selector has good support now, but check browser compatibility if very old browsers are a target)
+   OR, give that specific <strong> an ID or a unique class for easier targeting.
+   Example if you add class="hero-title-main":
+   #home .hero-title-main { ... }
+*/Skill Card Hover and Animation Effects */
+.skill-card {
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid #e8e4d9;
+  border-radius: 12px;
+}
+
+.skill-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(0,0,0,0.12), 0 0 0 4px #e8e4d9;
+  border-color: #d4c9b5;
+  transform: translateY(-8px) scale(1.02);
+  z-index: 2;
+}
+
+.skill-card .skill-icon {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4a4a4a;
+}
+
+.skill-card:hover .skill-icon {
+  color: #2c2c2c;
+  transform: scale(1.15) rotate(-5deg);
+  text-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Advanced In/Out Animations */
+.animate-in {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+}
+
+.animate-in.animated {
+  animation: fadeInStagger 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-in.out {
+  animation: fadeOutDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.02);
+  }
+  70% {
+    transform: translateY(4px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutDown {
+  to {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+}
+
+.skill-card img {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  background: #f9f7f2;
+  padding: 8px;
+  border: 2px solid #e8e4d9;
+  transform-origin: center;
+}
+
+.skill-card img:hover {
+  transform: scale(1.12) rotate(-3deg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  background: #f5f1e8;
+  border-color: #d4c9b5;
+}
+
+#my-skills {
+  background: #faf9f6;
+}
+
+.skill-card h4 {
+  color: #2c2c2c !important;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover h4 {
+  color: #1a1a1a !important;
+}
+/* --- Global Styles (Optional but good for consistency) --- */
+body.project-overlay-active {
+    overflow: hidden;
+}
+
+/* --- Project Details Overlay --- */
+#projectDetailsOverlay {
+    display: none; /* Initially hidden - JS controls this */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.88); /* Darker overlay background */
+    z-index: 2000;
+    /* display: flex; /* JS will change this to flex to show */
+    align-items: center;
+    justify-content: center;
+    padding: 15px; /* Padding for smaller screens */
+    box-sizing: border-box;
+}
+
+#projectDetailsModal {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 90vh;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden; /* Important for border-radius and children */
+    color: #1A1A1A;
+}
+
+#projectDetailsCloseBtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.8rem;
+    color: #777777;
+    cursor: pointer;
+    z-index: 2005; /* Above sidebar */
+    background: #FFFFFF;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+#projectDetailsCloseBtn:hover {
+    color: #1A1A1A;
+    background-color: #EAE0D5;
+    transform: scale(1.1);
+}
+
+#projectDetailsContent {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100%; /* Fallback for non-flex stacking */
+    background-color: #FFFFFF;
+    padding: 28px 24px;
+}
+
+/* Custom Scrollbar for Content Area */
+#projectDetailsContent::-webkit-scrollbar { width: 7px; }
+#projectDetailsContent::-webkit-scrollbar-track { background: #F7F7F7; border-radius: 10px;}
+#projectDetailsContent::-webkit-scrollbar-thumb { background: #C6B8A4; border-radius: 10px;}
+#projectDetailsContent::-webkit-scrollbar-thumb:hover { background: #A99A8D; }
+
+
+#projectListSidebar {
+    width: 260px; /* Slightly reduced width */
+    min-width: 260px;
+    height: 100%; /* Fallback for non-flex stacking */
+    background: #EAE0D5;
+    border-left: 1px solid #DCD0C0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+                opacity 0.35s ease-out,
+                width 0.3s ease, min-width 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 2001; /* Ensure sidebar is above content if overlaps occur */
+}
+
+/* Custom Scrollbar for Sidebar */
+#projectListSidebar::-webkit-scrollbar { width: 7px; }
+#projectListSidebar::-webkit-scrollbar-track { background: #E0D8CC; border-radius: 10px;}
+#projectListSidebar::-webkit-scrollbar-thumb { background: #B0A091; border-radius: 10px;}
+#projectListSidebar::-webkit-scrollbar-thumb:hover { background: #9A8C7F; }
+
+
+#projectListSidebar > div { /* Inner container */
+    padding: 20px 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#projectListSidebarTitle {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.15rem;
+    color: #1A1A1A;
+    border-bottom: 2px solid #1A1A1A;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+#categoryProjectList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+#categoryProjectList li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333333; /* Darker beige text */
+    border: 1px solid transparent; /* Keep space for border */
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+/* Hover and Active states will be managed by JS for consistency */
+
+
+/* --- General Content Styling inside Modal --- */
+#projectDetailsContent .project-banner-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Rounded top corners if banner is first */
+    display: block; /* Remove extra space below image */
+}
+
+#projectDetailsContent .content-padding {
+    padding: 28px 24px; /* Default padding, can be overridden */
+}
+#projectDetailsContent .content-padding-no-banner {
+    padding-top: 10px; /* Less top padding if no banner directly above */
+}
+
+
+#projectDetailsContent h2.project-title {
+    font-size: 2rem;
+    color: #1A1A1A;
+    margin:0 0 10px 0;
+    line-height: 1.3;
+}
+
+#projectDetailsContent h3.section-title {
+    font-size: 1.25rem;
+    color: #1A1A1A;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #E0E0E0; /* Lighter gray underline */
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+#projectDetailsContent p,
+#projectDetailsContent .description-text,
+#projectDetailsContent .role-impact-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #333333;
+    margin-bottom: 18px;
+}
+#projectDetailsContent .description-text p:last-child,
+#projectDetailsContent .role-impact-text p:last-child {
+    margin-bottom: 0;
+}
+
+#projectDetailsContent .live-preview-button {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
+    border: 1px solid #1A1A1A;
+}
+#projectDetailsContent .live-preview-button:hover {
+    background: #000000;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+#projectDetailsContent .live-preview-button.github-button {
+    background: #24292e; /* GitHub dark color */
+    border-color: #24292e;
+}
+#projectDetailsContent .live-preview-button.github-button:hover {
+    background: #1b1f23;
+}
+
+
+/* Tech Stacks */
+#projectDetailsContent .tech-stacks-container {
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+#projectDetailsContent .tech-stack-item {
+    background: #EAE0D5;
+    color: #1A1A1A;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Image Gallery */
+#projectDetailsContent .gallery-container {
+    display: flex;
+    gap: 10px;
+    margin: 12px 0 24px 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+#projectDetailsContent .gallery-image {
+    height: 110px;
+    border-radius: 6px;
+    background: #F0F0F0;
+    cursor: zoom-in;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #DCD0C0;
+}
+#projectDetailsContent .gallery-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* Info Row */
+#projectDetailsContent .info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 24px; /* row-gap column-gap */
+    margin: 20px 0 15px 0;
+    font-size: 0.9rem;
+    color: #444444;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EAE0D5;
+}
+#projectDetailsContent .info-row > div {
+    min-width: 120px; /* Ensure items don't get too squished */
+}
+#projectDetailsContent .info-row b {
+    color: #1A1A1A;
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+#projectDetailsContent .info-row span.info-value {
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+
+/* Digital Marketing Specifics */
+#projectDetailsContent .dm-clients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+#projectDetailsContent .dm-client-tag {
+    background: #333333;
+    color: #FFFFFF;
+    border-radius: 6px;
+    padding: 7px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* --- Zoom Overlay --- */
+#zoomImageOverlay {
+    /* display:none; /* JS handles */
+    position:fixed; top:0; left:0; width:100vw; height:100vh;
+    background:rgba(0,0,0,0.92);
+    z-index:3000;
+    align-items:center; justify-content:center;
+}
+#zoomCloseBtn { /* This ID is from your original zoom code */
+    position:absolute; top:25px; right:35px; font-size:2.5rem; color:#CCCCCC; cursor:pointer; z-index:10;
+}
+#zoomCloseBtn:hover { color:#FFFFFF; }
+#zoomedImg {
+    max-width:90vw; max-height:85vh; border-radius:8px;
+    box-shadow:0 8px 32px #00000080; object-fit:contain;
+    border: 2px solid #FFFFFF;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) { /* Medium devices (tablets) */
+    #projectDetailsModal {
+        flex-direction: column; /* Stack sidebar below content */
+        max-height: 95vh;
+        height: auto; /* Let content define height */
+    }
+    #projectDetailsContent {
+        height: auto; /* Grow as needed, or define fixed part of viewport */
+        max-height: 60vh; /* Example: content takes 60% of viewport height */
+        padding: 20px 18px;
+    }
+    #projectListSidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto; /* Grow as needed */
+        max-height: 35vh; /* Example: sidebar takes 35% of viewport height */
+        border-left: none;
+        border-top: 2px solid #DCD0C0;
+        /* Animation from bottom (if enabled in JS) */
+        /* transform: translateY(100%); This is the new initial state for stacking */
+    }
+    #projectListSidebar.sidebar-visible { /* Used by JS to animate in */
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    #projectDetailsContent h2.project-title { font-size: 1.7rem; }
+    #projectDetailsContent h3.section-title { font-size: 1.15rem; }
+    #projectDetailsContent p, #projectDetailsContent .description-text { font-size: 0.9rem; }
+    #projectDetailsContent .gallery-image { height: 90px; }
+}
+
+@media (max-width: 768px) { /* Small devices (landscape phones) */
+    #projectDetailsOverlay { padding: 10px; }
+    #projectDetailsModal { border-radius: 10px; max-height: calc(100vh - 20px); }
+
+    #projectDetailsContent { padding: 18px 15px; max-height: 60vh; }
+    #projectListSidebar { max-height: calc(40vh - 20px); } /* Adjusted for padding */
+    #projectListSidebar > div { padding: 15px; }
+
+
+    #projectDetailsContent h2.project-title { font-size: 1.5rem; }
+    #projectDetailsContent h3.section-title { font-size: 1.1rem; }
+    #projectDetailsContent .live-preview-button { padding: 8px 15px; font-size: 0.85rem; }
+    #projectDetailsContent .gallery-image { height: 80px; }
+    #projectListSidebarTitle { font-size: 1.05rem; }
+    #categoryProjectList li { padding: 9px 12px; font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) { /* Extra small devices (portrait phones) */
+    #projectDetailsContent { padding: 15px 12px; max-height: 58vh;}
+    #projectListSidebar { max-height: calc(42vh - 20px); }
+
+    #projectDetailsContent h2.project-title { font-size: 1.3rem; }
+    #projectDetailsContent .info-row { font-size: 0.85rem; gap: 10px 15px; }
+    #projectDetailsContent .gallery-image { height: 70px; }
+    #projectDetailsContent .gallery-container { gap: 8px; }
+    #projectDetailsContent .tech-stack-item { font-size: 0.8rem; padding: 4px 10px;}
+}
+/* --- General Setup --- */
+.edu-exp-section {
+    background-color: #FFFFFF; /* White background */
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif; /* Or your preferred font */
+    color: #1A1A1A;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+.edu-exp-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.edu-exp-section .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 50px;
+    text-align: left; /* As per image */
+    /* Animation will be handled by JS adding spans */
+}
+
+/* --- Columns --- */
+.timeline-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.timeline-column {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.timeline-column .column-title {
+    font-size: 0.9rem; /* Smaller as per image */
+    font-weight: 600;
+    color: #1A1A1A; /* Dark text */
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    /* Animation will be handled by JS adding spans */
+}
+
+/* --- Timeline --- */
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* The vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px; /* Start slightly below first dot's center */
+    bottom: 5px; /* End slightly above last dot's center */
+    left: 4px; /* Position to align with center of dots */
+    width: 2px;
+    background-color: #EAE0D5; /* Light Beige line */
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px; /* Space for dot and line */
+    margin-bottom: 35px;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* For hover */
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 5px; /* Align with first line of text */
+    width: 10px;
+    height: 10px;
+    background-color: #EAE0D5; /* Light Beige dot */
+    border-radius: 50%;
+    z-index: 2; /* Above the line */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-content {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: #1A1A1A; /* Dark dot on hover */
+    transform: scale(1.3);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+}
+
+/* Optional: subtle shadow on item hover */
+/*
+.timeline-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(200, 190, 180, 0.3);
+}
+*/
+
+.timeline-content .item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin: 0 0 5px 0;
+    /* Animation will be handled by JS adding spans */
+}
+
+.timeline-content .item-subtitle {
+    font-size: 0.9rem;
+    color: #555555; /* Dark Gray */
+    margin: 0 0 5px 0;
+    line-height: 1.4;
+}
+
+.timeline-content .item-date {
+    font-size: 0.8rem;
+    color: #777777; /* Medium Gray */
+    margin: 0;
+}
+
+/* --- Word by Word Text Reveal Animation --- */
+.animate-text-reveal > .char-animated,
+.item-title > .char-animated {
+    display: inline-block; /* Crucial for transform and consistent spacing */
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: opacity, transform; /* Performance hint */
+}
+
+/* When .is-visible is added to the parent or the element itself */
+.is-visible .animate-text-reveal > .char-animated,
+.is-visible.animate-text-reveal > .char-animated, /* if is-visible on the text element itself */
+.timeline-item.is-visible .item-title > .char-animated {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .edu-exp-section .section-title {
+        font-size: 2.4rem;
+        margin-bottom: 40px;
+    }
+    .timeline-columns {
+        gap: 20px;
+    }
+    .timeline-column .column-title {
+        font-size: 0.85rem;
+    }
+    .timeline-content .item-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .edu-exp-section .section-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .timeline-columns {
+        flex-direction: column;
+        gap: 40px; /* Space between stacked columns */
+    }
+    .timeline-column {
+        flex: none; /* Reset flex behavior */
+        width: 100%;
+    }
+    .timeline-column .column-title {
+        text-align: left; /* Or center if preferred when stacked */
+        margin-bottom: 20px;
+    }
+    .timeline::before {
+        left: 4px; /* Ensure line is still positioned correctly */
+    }
+    .timeline-item {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-exp-section {
+        padding: 40px 0;
+    }
+    .edu-exp-section .section-title {
+        font-size: 1.8rem;
+    }
+    .timeline-column .column-title {
+        font-size: 0.8rem;
+    }
+    .timeline-content .item-title {
+        font-size: 0.95rem;
+    }
+    .timeline-content .item-subtitle {
+        font-size: 0.85rem;
+    }
+    .timeline-content .item-date {
+        font-size: 0.75rem;
+    }
+}
+/* Project Details Overlay Animations & Hover Effects */
+#projectDetailsOverlay {
+  animation: overlayFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+@keyframes overlayFadeIn {
+  from { 
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to { 
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+#projectDetailsOverlay .modal-content,
+#projectDetailsOverlay > div {
+  animation: cardPopIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #faf9f6;
+  border: 2px solid #e8e4d9;
+}
+
+@keyframes cardPopIn {
+  0% { 
+    opacity: 0;
+    transform: scale(0.94) translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02) translateY(-8px);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#projectDetailsOverlay > div:hover {
+  box-shadow: 0 16px 56px rgba(0,0,0,0.15), 0 0 0 4px #e8e4d9;
+  transform: scale(1.01) translateY(-4px);
+}
+
+#projectDetailsOverlay a,
+#projectDetailsOverlay button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #e8e4d9;
+  color: #2c2c2c;
+  border: 2px solid #d4c9b5;
+}
+
+#projectDetailsOverlay a:hover,
+#projectDetailsOverlay button:hover {
+  background: #d4c9b5 !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px) scale(1.03);
+}
+
+#projectDetailsOverlay span[style*='background:#e0e0e0'] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #e8e4d9 !important;
+  color: #2c2c2c;
+  border: 2px solid #d4c9b5;
+  cursor: pointer;
+}
+
+#projectDetailsOverlay span[style*='background:#e0e0e0']:hover {
+  background: #d4c9b5 !important;
+  color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: scale(1.05);
+}
+
+/* Image Gallery Animations */
+.project-image {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid #e8e4d9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-image:hover {
+  transform: scale(1.03);
+  border-color: #d4c9b5;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+.project-image img {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-image:hover img {
+  transform: scale(1.08);
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .skill-card { 
+    margin-bottom: 24px;
+  }
+}
