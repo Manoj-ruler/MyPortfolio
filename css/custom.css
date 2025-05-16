@@ -77,7 +77,92 @@
       border-radius: 15px; /* Match parent */
     }
   }
-  
+  /* --- Stable Hero Title Styling --- */
+.hero-title-stable {
+    display: block; /* Or inline-block if it needs to sit alongside other inline elements */
+    font-family: "Your Custom Hero Font Name", Arial, sans-serif; /* IMPORTANT: Replace with your actual font stack */
+                                                              /* Ensure the fallback (Arial) is reasonably similar in x-height */
+    font-weight: 700; /* Or your desired weight */
+    text-transform: none; /* Or uppercase, etc., as per your design */
+    letter-spacing: normal; /* Or your specific letter-spacing */
+    color: #1A1A1A; /* Assuming text-dark makes it this color */
+
+    /* --- Core of the attempt to stabilize --- */
+    /* 1. Responsive Font Size (ADJUST THESE VALUES TO MATCH YOUR DESIGN) */
+    font-size: 4rem;  /* Default for large screens */
+    line-height: 1.1; /* Crucial: Slightly more than 1 to give breathing room */
+                      /* This also influences the height of the text box */
+
+    /* 2. Initial Single Line Handling (if applicable to your design) */
+    white-space: nowrap; /* If it's meant to be on one line on desktop */
+                         /* This helps JS calculate initial width based on full text */
+
+    /* 3. Minimum Height (Approximation) */
+    /* This is a bit of a hack. Calculate an approximate min-height based on
+       your largest font-size and line-height. E.g., 4rem * 1.1 = ~4.4rem.
+       Convert rem to px based on your root font-size if needed for precision,
+       or use a slightly generous rem value.
+       This tries to reserve vertical space.
+    */
+    min-height: 4.4rem; /* Example: 4rem font-size * 1.1 line-height */
+
+    /* 4. Text Alignment */
+    text-align: center; /* Or left/right as per your design */
+
+    /* 5. Prevent initial collapse if a scrolling library is hiding it with opacity */
+    opacity: 1 !important; /* Use with caution - only if opacity is the issue */
+    visibility: visible !important; /* Use with caution */
+
+    /* 6. Help browser rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility; /* Can sometimes help with font rendering consistency */
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For slightly smaller desktops / large tablets */
+@media (max-width: 1200px) {
+    .hero-title-stable {
+        font-size: 3.5rem;
+        min-height: 3.85rem; /* 3.5rem * 1.1 */
+    }
+}
+
+/* For tablets */
+@media (max-width: 992px) {
+    .hero-title-stable {
+        font-size: 3rem;
+        min-height: 3.3rem; /* 3rem * 1.1 */
+        white-space: normal; /* Allow wrapping now */
+    }
+}
+
+/* For smaller tablets and larger mobile phones */
+@media (max-width: 768px) {
+    .hero-title-stable {
+        font-size: 2.5rem;
+        min-height: 2.75rem; /* 2.5rem * 1.1 */
+        line-height: 1.2; /* Adjust if it wraps to multiple lines */
+    }
+}
+
+/* For most mobile phones */
+@media (max-width: 576px) {
+    .hero-title-stable {
+        font-size: 2rem;
+        min-height: 2.2rem; /* 2rem * 1.1 */
+    }
+}
+
+/* For very small mobile phones */
+@media (max-width: 400px) {
+    .hero-title-stable {
+        font-size: 1.7rem;
+        min-height: 1.87rem; /* 1.7rem * 1.1 */
+        line-height: 1.3;
+    }
+}
   /* ==========================================================================
    Project Card and Contained Elements Styling
    ========================================================================== */
