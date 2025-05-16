@@ -120,7 +120,7 @@ Ongoing work focuses on building a user-facing interface with a responsive desig
       client: 'AITA',
       live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
       carousel: ['images/AITA1.jpeg','images/AITA2.png','images/aita.webp'],
-      description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a ₹10,000 donation to support the successful organization and execution of the ALL INDIA TENNIS ASSOCIATION TOURNAMENT.</p>`,
+      description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a donation of ₹10,000 to support the successful organization and execution of the ALL INDIA TENNIS ASSOCIATION TOURNAMENT.</p>`,
       techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
     },
     {
@@ -162,7 +162,7 @@ Ongoing work focuses on building a user-facing interface with a responsive desig
       client: 'Bhimavaram Digitals',
       live: 'https://bhimavaramdigitals.com/',
       clients: ['Tero', 'KK Stores', 'Amul', 'PVC', 'More...'],
-      description: `<p>As a marketing intern at Bhimavaram Digitals, I was responsible for identifying, onboarding, and managing clients for digital advertising campaigns. I successfully brought in several new clients, helping them grow their online presence and reach through targeted digital marketing strategies and creative ad campaigns.</p>`
+      description: `<p>As a marketing intern at Bhimavaram Digitals, I am responsible for identifying, onboarding, and managing clients for digital advertising campaigns. I've successfully brought in several new clients, helping them grow their online presence and reach through targeted digital marketing strategies and creative ad campaigns.</p>`
     }
   ],
   'WordPress': [ // Added this category based on your data
