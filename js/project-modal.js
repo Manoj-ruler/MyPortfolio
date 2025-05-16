@@ -114,27 +114,27 @@ Ongoing work focuses on building a user-facing interface with a responsive desig
   ],
   'Live Streaming': [
     {
-      banner: 'images/aita.webp',
+      banner: 'images/project-2.png',
       title: 'ALL INDIA TENNIS ASSOCIATION Live',
       category: 'Live Streaming',
       client: 'AITA',
       live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/AITA1.jpeg','images/AITA2.png',],
+      carousel: ['images/AITA1.jpeg','images/AITA2.png','images/aita.webp'],
       description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a ₹10,000 donation to support the successful organization and execution of the ALL INDIA TENNIS ASSOCIATION TOURNAMENT.</p>`,
       techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
     },
     {
-      banner: 'images/bo.png',
+      banner: 'images/project-2.png',
       title: 'Bhimavaram Open Live',
       category: 'Live Streaming',
       client: 'YCA',
       live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/bo1.png','images/bo2.jpg','images/bo3.jpg',],
+      carousel: ['images/bo1.png','images/bo2.jpg','images/bo3.jpg', 'images/bo.png'],
       description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a ₹20,000 donation to support the successful organization and execution of the Bhimavaram Open Tennis Tournament</p>`,
       techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
     },
     {
-      banner: 'images/project-2.avif', // Example: create a specific banner or use a generic one
+      banner: 'images/project-2.png', // Example: create a specific banner or use a generic one
       title: 'Engagement Ceremony Live',
       category: 'Live Streaming',
       client: 'Dr N.G.K Murthy',
@@ -144,7 +144,7 @@ Ongoing work focuses on building a user-facing interface with a responsive desig
       techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
     },
     {
-      banner: 'images/project-2.avif', // Example: create a specific banner or use a generic one
+      banner: 'images/project-2.png', // Example: create a specific banner or use a generic one
       title: 'Live streaming Of Sigma2k25 ( Tech Fest )',
       category: 'Live Streaming',
       client: 'SRKR Engineering College',

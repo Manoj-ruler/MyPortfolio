@@ -1,26 +1,304 @@
+.glass-image-container { /* Optional: Add a container if you have multiple glass images in a row/grid */
+    display: flex; /* Example: for centering or spacing multiple images */
+    justify-content: center; /* Example */
+    padding: 20px; /* Example */
+  }
+  
   .glass-image {
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Glass effect background */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 400px;
-    height: 350px;
-    overflow: hidden;
+    
+    /* --- Responsive Changes START --- */
+    width: 100%; /* Allow it to take the full width of its parent */
+    max-width: 300px; /* Set a maximum size, it won't grow larger than this */
+    
+    /* Option 1: Fixed Aspect Ratio (e.g., 3:3.5 or 6:7 based on original 300:350) */
+    /* height: 0; */ /* Required for padding-bottom aspect ratio trick */
+    /* padding-bottom: 116.66%; */ /* (350 / 300 * 100) -- This creates a 6:7 aspect ratio */
+                                  /* The image will be absolutely positioned inside */
+  
+    /* Option 2: Height based on width (simpler, might not keep exact aspect ratio if width is constrained differently) */
+     height: auto; /* Let the content (image) define the height or set proportionally */
+     aspect-ratio: 300 / 350; /* Modern CSS for aspect ratio, good browser support */
+  
+    /* Option 3: Fixed height that reduces on smaller screens (less ideal for image aspect ratio) */
+    /* height: 350px; */ /* We'll adjust this in media queries if using this option */
+  
+    overflow: hidden; /* Keep this to clip the scaled image */
+    position: relative; /* Needed if using Option 1 for absolute positioning of the image */
+    margin: 0 auto; /* Center the block if its parent is wider and it's not filling it */
   }
-
+  
   .glass-image img {
+    display: block; /* Removes extra space below inline images */
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: 0.4s ease-in-out;
+    object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+    border-radius: 20px; /* Match parent's border-radius */
+    transition: transform 0.4s ease-in-out; /* Keep your transition */
+  
+    /* If using Option 1 (padding-bottom aspect ratio) */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
   }
-
+  
   .glass-image:hover img {
     transform: scale(1.1);
   }
+  
+  /* --- Media Queries for further adjustments --- */
+  
+  /* Example: For tablets where you might want slightly smaller max-width or different aspect ratio */
+  @media (max-width: 768px) {
+    .glass-image {
+      max-width: 250px; /* Adjust max-width if needed */
+      /* If using Option 3 (fixed height), adjust height here: */
+      /* height: 300px; */
+      /* If using Option 1 or 2, aspect-ratio / padding-bottom will adapt automatically with max-width */
+    }
+  }
+  
+  /* Example: For mobile phones */
+  @media (max-width: 480px) {
+    .glass-image {
+      max-width: 90%; /* Or a specific pixel value like 200px */
+                       /* Using percentage here makes it relative to its parent's width */
+      border-radius: 15px; /* Optionally reduce border-radius on smaller screens */
+  
+      /* If using Option 3 (fixed height), adjust height here: */
+      /* height: 240px; */
+    }
+    .glass-image img {
+      border-radius: 15px; /* Match parent */
+    }
+  }
+  
+  /* ==========================================================================
+   Project Card and Contained Elements Styling
+   ========================================================================== */
+
+/* --- Main Project Card Item (Overlay Container) --- */
+.project-card-item { /* This is your .overlay.overlay-show... div */
+    position: relative; /* CRUCIAL for absolute positioning of children */
+    overflow: hidden;   /* Good practice if children might overflow during animations */
+    /* Add any other base styles for your card item, like margin, display: block, etc. */
+}
+
+/* Image within the card */
+.project-card-item .horizontal-scroller-image {
+    display: block; /* Removes extra space if image is inline */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio, or set specific height if needed */
+    /* border-radius: 0; /* As per your original class */
+    /* transition for hover effects on image if any */
+}
+
+
+/* --- Corner Action Button ("View Projects") --- */
+button.image-action-button {
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    right: 30px; /* Default distance from the right edge - adjust as needed */
+    transform: translateY(-50%); /* Initial vertical centering */
+    z-index: 15; /* Above image/gradient, potentially below modals */
+
+    /* Base Styling - Consistent Size Across Views */
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    /* Appearance for Visibility on Image */
+    color: #EAE0D5; /* Light Beige text */
+    background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent DARK background */
+    border: 1px solid rgba(234, 224, 213, 0.4); /* Subtle Light Beige border */
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    backdrop-filter: blur(5px); /* Optional: Glassmorphism touch */
+    -webkit-backdrop-filter: blur(5px);
+
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    transform-style: preserve-3d;
+
+    /* Transitions */
+    transition:
+        color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+        background-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+        border-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+        transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.05s,
+        box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* In-View Animation */
+    opacity: 0;
+    /* Initial transform for animation, includes vertical centering */
+    transform: translateY(-50%) translateX(30px) scale(0.9);
+    animation: fadeInButtonFromRight 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s forwards;
+}
+
+@keyframes fadeInButtonFromRight {
+    to {
+        opacity: 1;
+        /* Final transform, includes vertical centering */
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+}
+
+button.image-action-button span {
+    position: relative;
+    z-index: 2; /* Above shimmer */
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+button.image-action-button .arrow-icon {
+    width: 18px; /* Consistent size */
+    height: 18px; /* Consistent size */
+    margin-left: 8px; /* Consistent spacing */
+    stroke: #EAE0D5; /* Initial color */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), stroke 0.3s ease;
+    position: relative;
+    z-index: 2; /* Above shimmer */
+}
+
+/* Shimmer Effect (::before) */
+button.image-action-button::before {
+    content: '';
+    position: absolute;
+    top: -75%; left: -75%;
+    width: 250%; height: 250%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(234, 224, 213, 0) 0%,    /* Transparent Light Beige */
+        rgba(234, 224, 213, 0) 35%,
+        rgba(234, 224, 213, 0.2) 48%, /* Subtle Light Beige highlight */
+        rgba(234, 224, 213, 0.2) 52%,
+        rgba(234, 224, 213, 0) 65%,
+        rgba(234, 224, 213, 0) 100%
+    );
+    z-index: 1; /* Below text/icon, above base background */
+    transform: rotate(20deg);
+    transition: transform 0.7s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s ease;
+    opacity: 0; /* Hidden initially */
+}
+
+/* --- Button HOVER Effects --- */
+button.image-action-button:hover {
+    background-color: #EAE0D5; /* Light Beige background */
+    color: #1A1A1A;           /* Dark text */
+    border-color: #DCD0C0;   /* Darker Beige border */
+    /* Maintain vertical centering while applying hover transforms */
+    transform: translateY(-50%) translateX(-5px) scale(1.05);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 0 3px rgba(220, 208, 192, 0.5); /* Outer beige glow */
+}
+
+button.image-action-button:hover::before { /* Shimmer activation */
+    transform: translate(20%, 20%) rotate(20deg);
+    opacity: 0.9; /* More prominent on light hover background */
+}
+
+
+
+button.image-action-button:hover .arrow-icon {
+    transform: translateX(4px) scale(1.1);
+    stroke: #1A1A1A; /* Dark stroke */
+}
+
+/* Spinning Border (::after) - Optional */
+button.image-action-button::after {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px; /* Slightly outside */
+    border: 1px dashed transparent;
+    border-radius: inherit; /* Match parent's (button) border-radius */
+    z-index: 0; /* Behind main button content */
+    opacity: 0;
+    transition: opacity 0.4s ease, border-color 0.4s ease;
+    pointer-events: none; /* Doesn't interfere with clicks */
+}
+
+button.image-action-button:hover::after {
+    opacity: 0.7;
+    border-color: #1A1A1A; /* Dark dashed border on hover */
+    animation: spinBorderSmall 12s linear infinite;
+}
+
+@keyframes spinBorderSmall {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- Button ACTIVE (Click) State --- */
+button.image-action-button:active {
+    /* Maintain vertical centering */
+    transform: translateY(-50%) translateX(0px) scale(0.98);
+    background-color: #DCD0C0; /* Darker beige */
+    color: #1A1A1A;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        0 0 0 1px #DCD0C0;
+}
+
+
+/* --- Responsive Media Queries FOR BUTTON POSITIONING (Optional) --- */
+/* Use these only if the default 'right: 30px' needs adjustment on specific screen sizes.
+   The button's visual size (padding, font-size) remains consistent. */
+@media (max-width: 768px) {
+    button.image-action-button {
+        /* Example: If 30px from right is too much on tablets */
+        right: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    button.image-action-button {
+        /* Example: If 30px from right is too much on small phones */
+         right: 15px; 
+
+        /* Optional: Disable complex animations on very small screens for performance */
+         &:hover::after { animation: none; opacity: 0; } 
+        &:hover::before { opacity: 0; } 
+    }
+}
+
+
+/* --- Bottom-Left Caption (Web Development Title) --- */
+.project-caption-actions {
+    /* Your existing Bootstrap classes for positioning this whole block:
+       p-absolute bottom-0 left-0 w-100
+       p-5 (Bootstrap's default padding for this class)
+       d-none d-lg-block (visibility based on screen size)
+    */
+    /* Example of overriding Bootstrap's p-5 if it's too large: */
+    /* padding: 1.5rem 2rem !important; */
+    /* Using Bootstrap's CSS variable for p-5 if available or a fallback */
+    padding: var(--bs-p-5, 3rem) !important;
+
+
+    /* If you had flex styles here for a side-by-side button before,
+       they are not needed if the button is moved out.
+       This div now just contains the H4. */
+    z-index: 10; /* Above image, but potentially below the corner button if they overlap */
+}
+
+.project-caption-actions .project-category-title { /* Target H4 within this specific context */
+    color: #FFFFFF; /* White text */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* For better readability on image */
+    margin-bottom: 0 !important; /* Override Bootstrap if needed */
+    /* Ensure your theme's text utility classes (text-7, line-height-4 etc.) are applied */
+}
 
 
 /* 
@@ -33,68 +311,77 @@
 /* --- Specific adjustments for "FULL STACK DEVLOPER" --- */
 
 /* Container of "FULL STACK DEVLOPER" */
-#home .row.py-3.py-lg-0.custom-border-bottom-1:first-child .col > div[data-scroll] {
-    /* This div is the direct parent of the <strong> tag */
-    width: 100%; /* Ensure the data-scroll container takes full available width */
-    overflow: visible; /* Try to prevent internal clipping if the library does it */
-    display: block; /* Change from default if it's inline */
+/* Default styles for #hero-main-title or .custom-hero-font-1 */
+/* Make sure you have your base styles defined somewhere */
+#hero-main-title,
+.custom-hero-font-1 { /* Targeting both in case custom-hero-font-1 has the font-size */
+    display: block; /* Or inline-block, depending on desired layout with siblings */
+    font-size: 4rem;  /* STARTING LARGE FONT SIZE - Adjust this to your design */
+    font-weight: 700; /* Or whatever weight your custom font uses */
+    line-height: 1.1; /* Adjust for good spacing if it wraps */
+    text-align: center; /* Or left/right based on your design */
+    white-space: nowrap; /* Initially prevent wrapping to see its full width impact */
+    overflow-wrap: break-word;                     /* We will allow wrapping on smaller screens if needed */
+    color: #1A1A1A; /* Assuming text-dark makes it this color from your palette */
+    /* Any other base styles like letter-spacing, text-transform */
 }
 
-/* The "FULL STACK DEVLOPER" text itself */
-#home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
-    display: block; /* Or inline-block, critical for width and wrapping */
-    width: 100%;    /* Force it to try and fit within the container's width */
-    max-width: 100%; /* Redundant if width: 100% works, but safe */
-    white-space: normal !important; /* Re-iterate, most important rule */
-    overflow-wrap: break-word;
-    word-break: break-word; /* break all for very stubborn cases */
-    text-align: center; /* Center it if it wraps to multiple lines */
-    line-height: 1;     /* Make line height very tight for this specific text */
-    padding-left: 5px;  /* Add a tiny bit of padding so it's not flush against edges */
-    padding-right: 5px;
-    box-sizing: border-box; /* Ensure padding doesn't add to width */
+/* Parent div styles - ensure it allows text to flow */
+div[data-scroll-direction="horizontal"] {
+    /* This div might be set to display: flex by the scroll library, or have other styles.
+       Usually, you want it to take up available width. */
+    width: 100%; /* Or auto, depending on context */
+    overflow: hidden; /* If the scroll effect is making it wider than viewport temporarily */
 }
 
 
-/* --- Adjust font sizes more aggressively for this specific text at different breakpoints --- */
+/* --- Responsive Adjustments for #hero-main-title --- */
 
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-    /* ... (other styles for this breakpoint) ... */
-
-    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
-        font-size: clamp(38px, 9vw, 80px); /* Slightly smaller max than general custom-hero-font-1 */
-        letter-spacing: -1.5px; /* More aggressive letter spacing */
+/* For slightly smaller desktops / large tablets */
+@media (max-width: 1200px) {
+    #hero-main-title,
+    .custom-hero-font-1 {
+        font-size: 3.5rem; /* Slightly smaller */
     }
 }
 
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... (other styles for this breakpoint) ... */
-
-    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
-        font-size: clamp(30px, 10vw, 60px);
-        letter-spacing: -1px;
-        line-height: 0.95; /* Even tighter */
+/* For tablets (e.g., iPads in portrait and landscape) */
+@media (max-width: 992px) {
+    #hero-main-title,
+    .custom-hero-font-1 {
+        font-size: 3rem;   /* Further reduction */
+        white-space: normal; /* Allow text to wrap if it's too long now */
+        /* text-align: center; Ensure it's centered if it wraps */
     }
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    /* ... (other styles for this breakpoint) ... */
-
-    #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child strong.custom-hero-font-1 {
-        font-size: clamp(26px, 11vw, 50px); /* Make it significantly smaller */
-        letter-spacing: -0.5px;
-        line-height: 0.9; /* Very tight line height */
-    }
-    /* Ensure the container row has some minimal vertical padding */
-     #home .row.py-3.py-lg-0.custom-border-bottom-1:first-child {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
+/* For smaller tablets and larger mobile phones (landscape) */
+@media (max-width: 768px) {
+    #hero-main-title,
+    .custom-hero-font-1 {
+        font-size: 2.5rem; /* Getting smaller */
+        line-height: 1.2;  /* May need to adjust line height if it wraps to multiple lines */
     }
 }
 
+/* For most mobile phones (portrait) */
+@media (max-width: 576px) {
+    #hero-main-title,
+    .custom-hero-font-1 {
+        font-size: 2rem;   /* Even smaller */
+        /* You might want to ensure the text is centered if it's not globally */
+        /* text-align: center; */
+    }
+}
+
+/* For very small mobile phones */
+@media (max-width: 400px) {
+    #hero-main-title,
+    .custom-hero-font-1 {
+        font-size: 1.7rem; /* Smallest size */
+        line-height: 1.3;
+    }
+}
 /*
    IMPORTANT: You should fix the typo in your HTML from "DEVLOPER" to "DEVELOPER".
    If you do, update the CSS selectors accordingly:
