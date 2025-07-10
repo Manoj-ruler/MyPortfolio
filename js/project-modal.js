@@ -13,19 +13,7 @@ Responsible for adding new event details, updating media content, and making UI 
 Focus on keeping the site responsive, user-friendly, and aligned with the latest event changes.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
     },
-    {
-      banner: 'images/srkr.png',
-      title: 'SRKR College Website',
-      category: 'Web Development',
-      client: 'SRKR College',
-      developer: 'Manoj Kumar',
-      live: 'https://srkrec.edu.in/',
-      carousel: ['images/srkr1.png', 'images/srkr2.png', 'images/srkr3.jpg', 'images/srkr4.jpg'],
-      description: `<p>Conducted a thorough audit of the SRKR College website to identify and resolve bugs affecting performance and user experience.
-Fixed UI issues, improved responsiveness, and optimized content flow across pages.
-Currently part of the college website development team, contributing to ongoing improvements and new feature implementations.</p>`,
-      techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
-    },
+
     {
       banner: 'images/patro.jpg',
       title: 'Prasanta Patro WordPress Website',
@@ -50,18 +38,6 @@ Provided ongoing support for site maintenance and content management.</p>`,
 We created custom pages for speaker profiles, schedules, registration, and gallery, ensuring a clean and responsive user interface.
 Also handled regular content updates.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap',]
-    },
-    {
-      banner: 'images/dbt.png',
-      title: 'Department of BiotechnologyCentre for Microbial Informatics Website',
-      category: 'Web Development',
-      client: 'DBT Centre for Microbial Informatics',
-      live: 'https://dbtcmi.in/',
-      carousel: ['images/dbt1.png', 'images/dbt2.png', 'images/dbt3.png', 'images/dbt4.png'],
-      description: `<p>Currently working with my teammate on the DBTCMI website, an ongoing project focused on visualizing microorganism data using dynamically generated Plotly graphs.
-Developed a functional prototype that fetches, processes, and displays data-driven insights through interactive charts.
-The project aims to support researchers and analysts with intuitive, real-time data visualization tools.</p>`,
-      techStacks: ['HTML', 'CSS', 'JavaScript', 'Plotly.js', 'Python',]
     },
     {
       banner: 'images/houses.jpg',
