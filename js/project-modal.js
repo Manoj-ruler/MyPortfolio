@@ -34,12 +34,12 @@ const projectDetailsOverlayData = {
   ],
   'Personal Projects': [
     {
-      banner: 'images/project-3.png',
+      banner: 'images/termassist-banner.png',
       title: 'TermAssist – Privacy-First Terminal Assistant',
       category: 'Personal Projects',
       client: 'Personal',
       live: 'https://termassist.vercel.app/',
-      carousel: ['images/project-3.png'],
+      carousel: ['images/term1.png','images/term2.png','images/term3.png'],
       description: `<p>Built a privacy-first terminal assistant that converts natural language queries into executable bash commands using the BM25 retrieval algorithm.</p>
 <p>Developed a full-stack ecosystem consisting of a CLI application and a web dashboard with authentication, analytics, query history, and custom snippet management.</p>
 <p>Implemented secure dashboard-to-CLI synchronization using Supabase and token-based authentication.</p>
@@ -47,12 +47,12 @@ const projectDetailsOverlayData = {
       techStacks: ['Next.js', 'TypeScript', 'Node.js', 'Supabase', 'PostgreSQL', 'BM25']
     },
     {
-      banner: 'images/project-1.png',
+      banner: 'images/study-banner.png',
       title: 'StudySensei – AI-Powered Learning Platform',
       category: 'Personal Projects',
       client: 'Personal',
-      live: 'https://github.com/Manoj-ruler',
-      carousel: ['images/project-1.png'],
+      live: 'https://github.com/Manoj-ruler/study_sensei',
+      carousel: ['images/study1.png','images/study2.png','images/study3.png','images/study4.png'],
       description: `<p>Built an AI-powered learning platform featuring AI mentorship, coding challenges, quizzes, personalized roadmaps, and document-based learning.</p>
 <p>Implemented a RAG system using LangChain and PostgreSQL (pgvector) for semantic document retrieval and context-aware responses.</p>
 <p>Developed a coding evaluation system with configurable sandbox integration support.</p>`,
@@ -69,17 +69,6 @@ const projectDetailsOverlayData = {
 Implemented gesture detection to perform actions like jumping, ducking, and moving left or right using a webcam feed.
 The project aimed to create an interactive, hands-free gaming experience by combining real-time video processing with game control logic.</p>`,
       techStacks: ['Python', 'OpenCV']
-    }
-  ],
-  'Digital Marketing': [
-    {
-      banner: 'images/digitals.jpg', // Example: create a specific banner
-      title: 'Digital Marketing Internship',
-      category: 'Digital Marketing',
-      client: 'Bhimavaram Digitals',
-      live: 'https://bhimavaramdigitals.com/',
-      clients: ['Tero', 'KK Stores', 'Amul', 'PVC', 'More...'],
-      description: `<p>As a marketing intern at Bhimavaram Digitals, I am responsible for identifying, onboarding, and managing clients for digital advertising campaigns. I've successfully brought in several new clients, helping them grow their online presence and reach through targeted digital marketing strategies and creative ad campaigns.</p>`
     }
   ]
 };
