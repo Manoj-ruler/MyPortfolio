@@ -30,18 +30,6 @@ const projectDetailsOverlayData = {
       carousel: ['images/jaithra_banner.png', 'images/srkr1.png', 'images/srkr2.png'],
       description: `<p>Designed and developed the official sports carnival website for JAITRA 2026 at SRKR Engineering College, attracting <b>6,190+ visitors</b> during the event. Features a real-time live scoreboard ticker and sport-wise scoreboards for Volleyball (18 matches), Kabaddi (22 matches), Badminton (33 matches), and Pickleball (28 matches). Includes a secure admin dashboard built to update scores and publish live match statistics instantly.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Bootstrap', 'MySQL']
-    },
-    {
-      banner: 'images/run.jpeg',
-      title: 'Temple Run Game with Automations',
-      category: 'Web Development',
-      client: 'Personal',
-      live: 'https://github.com/Manoj-ruler/temple-run',
-      carousel: ['images/run1.jpeg', 'images/run2.png', 'images/run3.png', ],
-      description: `<p>Developed an automated version of the Temple Run game using Python and computer vision, controlled by body gestures.
-Implemented gesture detection to perform actions like jumping, ducking, and moving left or right using a webcam feed.
-The project aimed to create an interactive, hands-free gaming experience by combining real-time video processing with game control logic.</p>`,
-      techStacks: ['Python', 'OpenCV']
     }
   ],
   'Personal Projects': [
@@ -69,6 +57,18 @@ The project aimed to create an interactive, hands-free gaming experience by comb
 <p>Implemented a RAG system using LangChain and PostgreSQL (pgvector) for semantic document retrieval and context-aware responses.</p>
 <p>Developed a coding evaluation system with configurable sandbox integration support.</p>`,
       techStacks: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'pgvector', 'LangChain', 'Google Gemini']
+    },
+    {
+      banner: 'images/run.jpeg',
+      title: 'Temple Run Game with Automations',
+      category: 'Personal Projects',
+      client: 'Personal',
+      live: 'https://github.com/Manoj-ruler/temple-run',
+      carousel: ['images/run1.jpeg', 'images/run2.png', 'images/run3.png', ],
+      description: `<p>Developed an automated version of the Temple Run game using Python and computer vision, controlled by body gestures.
+Implemented gesture detection to perform actions like jumping, ducking, and moving left or right using a webcam feed.
+The project aimed to create an interactive, hands-free gaming experience by combining real-time video processing with game control logic.</p>`,
+      techStacks: ['Python', 'OpenCV']
     }
   ],
   'Digital Marketing': [
