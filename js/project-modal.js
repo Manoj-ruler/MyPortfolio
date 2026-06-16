@@ -28,7 +28,7 @@ const projectDetailsOverlayData = {
       client: 'SRKR Engineering College',
       live: 'https://jaithra2026.in/',
       carousel: ['images/jaithra_banner.png', 'images/srkr1.png', 'images/srkr2.png'],
-      description: `<p>Designed and developed the official sports carnival website for JAITRA 2026 at SRKR Engineering College. Features a real-time live scoreboard ticker and sport-wise scoreboards for Volleyball, Kabaddi, Badminton, and Pickleball, allowing seamless updates on match points. Built a secure admin dashboard for instantly publishing live scores and match statistics.</p>`,
+      description: `<p>Designed and developed the official sports carnival website for JAITRA 2026 at SRKR Engineering College, attracting <b>6,190+ visitors</b> during the event. Features a real-time live scoreboard ticker and sport-wise scoreboards for Volleyball (18 matches), Kabaddi (22 matches), Badminton (33 matches), and Pickleball (28 matches). Includes a secure admin dashboard built to update scores and publish live match statistics instantly.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Bootstrap', 'MySQL']
     },
     {
