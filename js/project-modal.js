@@ -16,7 +16,7 @@ const projectDetailsOverlayData = {
       title: 'SAANA – SRKREC Alumni Association of North America',
       category: 'Web Development',
       client: 'SAANA',
-      live: 'https://github.com/Manoj-ruler',
+      live: 'https://www.thesaana.org/',
       carousel: ['images/srkr1.png', 'images/srkr2.png', 'images/srkr3.jpg', 'images/srkr4.jpg'],
       description: `<p>Enhanced the official website by building admin panels, improving alumni data management and announcements workflows, and refining UI/UX for a better user experience.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
