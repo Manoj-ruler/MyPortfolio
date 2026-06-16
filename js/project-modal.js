@@ -8,58 +8,28 @@ const projectDetailsOverlayData = {
       client: 'IGNA',
       live: 'https://www.ignahyd.in/',
       carousel: ['images/image.png', 'images/image1.png', 'images/image2.png', 'images/image3.png'],
-      description: `<p>Currently managing and maintaining the IGNA official website, ensuring content updates, smooth performance, and up-to-date information.
-Responsible for adding new event details, updating media content, and making UI improvements as needed.
-Focus on keeping the site responsive, user-friendly, and aligned with the latest event changes.</p>`,
+      description: `<p>Enhanced the official website by implementing event updates, refining UI/UX, improving responsiveness, and developing admin panels for streamlined content management.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
     },
-
     {
-      banner: 'images/patro.jpg',
-      title: 'Prasanta Patro WordPress Website',
-      category: 'WordPress',
-      client: 'Prasanta Patro',
-      live: 'https://prasantapatro.com/',
-      carousel: ['images/patro1.png', 'images/patro2.png', 'images/patro3.png', 'images/patro4.png'],
-      description: `<p> Worked with my teammate to manage and customized the WordPress site for Prasanta Patro, focusing on content updates, SEO optimization, and design enhancements.
-Handled plugin configuration, improved page layouts, and ensured mobile responsiveness.
-Provided ongoing support for site maintenance and content management.</p>`,
-      techStacks: ['WordPress', 'Elementor', 'SEO', 'PHP', 'CSS']
+      banner: 'images/srkr.png',
+      title: 'SAANA – SRKREC Alumni Association of North America',
+      category: 'Web Development',
+      client: 'SAANA',
+      live: 'https://github.com/Manoj-ruler',
+      carousel: ['images/srkr1.png', 'images/srkr2.png', 'images/srkr3.jpg', 'images/srkr4.jpg'],
+      description: `<p>Enhanced the official website by building admin panels, improving alumni data management and announcements workflows, and refining UI/UX for a better user experience.</p>`,
+      techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
     },
     {
-      banner: 'images/icaaai.png',
-      title: 'ICAAAI SRKR CSE Conference Web Page',
+      banner: 'images/jaithra_banner.png',
+      title: 'JAITRA 2026 – AP\'s Premier Engineering Sports Carnival Website',
       category: 'Web Development',
-      client: 'SRKR CSE',
-      developer: 'Manoj Kumar',
-      live: 'https://srkrec.edu.in/ICAAAI-2024/',
-      carousel: ['images/icaaai1.png', 'images/icaaai2.png', 'images/icaaai3.png', 'images/icaaai4.png'],
-      description: `<p>Along with my teammate, I designed and developed the official website for ICAAAI 2024, hosted by the SRKR CSE Department.
-We created custom pages for speaker profiles, schedules, registration, and gallery, ensuring a clean and responsive user interface.
-Also handled regular content updates.</p>`,
-      techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap',]
-    },
-    {
-      banner: 'images/houses.jpg',
-      title: 'Department Houses Website',
-      category: 'Web Development',
-      client: 'Department',
-      live: 'https://csd-it-house-website-swapanths-projects.vercel.app/',
-      carousel: ['images/houses1.png', 'images/houses2.png', 'images/houses3.png', 'images/houses4.png'],
-      description: `<p>Worked as part of a team to develop the Houses website showcasing college houses, events, and scores.
-Played a major role in designing and managing the admin page and handling dynamic data updates from the database.
-Focused on creating a user-friendly interface and ensuring accurate real-time display of house points and event details.</p>`,
-      techStacks: ['React', 'Node.js', 'MongoDB', 'Bootstrap', 'Vercel' , "HTML", "CSS", "JavaScript" , "PHP"]
-    },
-    {
-      banner: 'images/code.png',
-      title: 'Code Review Roulette (Personal Project)',
-      category: 'Web Development',
-      client: 'Personal',
-      live: 'https://mern-code-review-frontend.vercel.app/',
-      carousel: ['images/mern1.jpg', 'images/mern2.jpg', 'images/mern3.jpg', ],
-      description: `<p>Code Review Roulette is a real-time open-source code review platform that anonymously pairs developers to review each other's code. Built to encourage unbiased and continuous peer feedback, the platform offers a gamified experience and promotes open-source contributions in a fun, educational way.</p>`,
-      techStacks: ['React', 'Node.js', 'Express', 'MongoDB',  'Vercel']
+      client: 'SRKR Engineering College',
+      live: 'https://jaithra2026.in/',
+      carousel: ['images/jaithra_banner.png', 'images/srkr1.png', 'images/srkr2.png'],
+      description: `<p>Designed and developed the official sports carnival website for JAITRA 2026 at SRKR Engineering College. Features a real-time live scoreboard ticker and sport-wise scoreboards for Volleyball, Kabaddi, Badminton, and Pickleball, allowing seamless updates on match points. Built a secure admin dashboard for instantly publishing live scores and match statistics.</p>`,
+      techStacks: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Bootstrap', 'MySQL']
     },
     {
       banner: 'images/run.jpeg',
@@ -72,60 +42,33 @@ Focused on creating a user-friendly interface and ensuring accurate real-time di
 Implemented gesture detection to perform actions like jumping, ducking, and moving left or right using a webcam feed.
 The project aimed to create an interactive, hands-free gaming experience by combining real-time video processing with game control logic.</p>`,
       techStacks: ['Python', 'OpenCV']
-    },
-    {
-      banner: 'images/cosmo.png',
-      title: 'Cosmopolitan Club Website',
-      category: 'Web Development',
-      client: 'Cosmopolitan Club',
-      live: 'https://github.com/Manoj-ruler/Cosmo-website',
-      carousel: ['images/cos.png', 'images/cos1.png',],
-      description: `<p>Currently developing the official website for the Cosmopolitan Club, aimed at showcasing club events, members, and facilities.
-The admin portal has been completed, enabling secure content management, member data handling, and event updates.
-Ongoing work focuses on building a user-facing interface with a responsive design and smooth navigation.</p>`,
-      techStacks: ["HTML", "CSS", "JavaScript" , "PHP"]
     }
   ],
-  'Live Streaming': [
+  'AI & Full Stack': [
     {
-      banner: 'images/project-2.png',
-      title: 'ALL INDIA TENNIS ASSOCIATION Live',
-      category: 'Live Streaming',
-      client: 'AITA',
-      live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/AITA1.jpeg','images/AITA2.png','images/aita.webp'],
-      description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a donation of ₹10,000 to support the successful organization and execution of the ALL INDIA TENNIS ASSOCIATION TOURNAMENT.</p>`,
-      techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
+      banner: 'images/project-3.png',
+      title: 'TermAssist – Privacy-First Terminal Assistant',
+      category: 'AI & Full Stack',
+      client: 'Personal',
+      live: 'https://github.com/Manoj-ruler',
+      carousel: ['images/project-3.png'],
+      description: `<p>Built a privacy-first terminal assistant that converts natural language queries into executable bash commands using the BM25 retrieval algorithm.</p>
+<p>Developed a full-stack ecosystem consisting of a CLI application and a web dashboard with authentication, analytics, query history, and custom snippet management.</p>
+<p>Implemented secure dashboard-to-CLI synchronization using Supabase and token-based authentication.</p>
+<p>Engineered an offline-first architecture capable of sub-50 ms local command retrieval while preserving user privacy.</p>`,
+      techStacks: ['Next.js', 'TypeScript', 'Node.js', 'Supabase', 'PostgreSQL', 'BM25']
     },
     {
-      banner: 'images/project-2.png',
-      title: 'Bhimavaram Open Live',
-      category: 'Live Streaming',
-      client: 'YCA',
-      live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/bo1.png','images/bo2.jpg','images/bo3.jpg', 'images/bo.png'],
-      description: `<p>Managed live streaming operations to ensure high-quality coverage, enhancing the tournament's online reach and engagement. Secured a ₹20,000 donation to support the successful organization and execution of the Bhimavaram Open Tennis Tournament</p>`,
-      techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
-    },
-    {
-      banner: 'images/project-2.png', // Example: create a specific banner or use a generic one
-      title: 'Engagement Ceremony Live',
-      category: 'Live Streaming',
-      client: 'Dr N.G.K Murthy',
-      live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/eg1.png','images/eg2.png','images/eg3.png',],
-      description: `<p>Managed live streaming operations to ensure high-quality coverage for a personal event, capturing key moments for remote attendees.</p>`,
-      techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
-    },
-    {
-      banner: 'images/project-2.png', // Example: create a specific banner or use a generic one
-      title: 'Live streaming Of Sigma2k25 ( Tech Fest )',
-      category: 'Live Streaming',
-      client: 'SRKR Engineering College',
-      live: 'https://www.youtube.com/@BhimavaramDigitals/streams',
-      carousel: ['images/sigma.png',],
-      description: `<p>Managed live streaming for the college tech fest, Sigma2k25, ensuring stable and high-quality broadcast of events and presentations to a wider audience.</p>`,
-      techStacks: ['OBS Studio', 'YouTube Live', 'Multi-cam Setup']
+      banner: 'images/project-1.png',
+      title: 'StudySensei – AI-Powered Learning Platform',
+      category: 'AI & Full Stack',
+      client: 'Personal',
+      live: 'https://github.com/Manoj-ruler',
+      carousel: ['images/project-1.png'],
+      description: `<p>Built an AI-powered learning platform featuring AI mentorship, coding challenges, quizzes, personalized roadmaps, and document-based learning.</p>
+<p>Implemented a RAG system using LangChain and PostgreSQL (pgvector) for semantic document retrieval and context-aware responses.</p>
+<p>Developed a coding evaluation system with configurable sandbox integration support.</p>`,
+      techStacks: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'pgvector', 'LangChain', 'Google Gemini']
     }
   ],
   'Digital Marketing': [
@@ -137,20 +80,6 @@ Ongoing work focuses on building a user-facing interface with a responsive desig
       live: 'https://bhimavaramdigitals.com/',
       clients: ['Tero', 'KK Stores', 'Amul', 'PVC', 'More...'],
       description: `<p>As a marketing intern at Bhimavaram Digitals, I am responsible for identifying, onboarding, and managing clients for digital advertising campaigns. I've successfully brought in several new clients, helping them grow their online presence and reach through targeted digital marketing strategies and creative ad campaigns.</p>`
-    }
-  ],
-  'WordPress': [ // Added this category based on your data
-    {
-      banner: 'images/patro.jpg',
-      title: 'Prasanta Patro WordPress Website',
-      category: 'WordPress',
-      client: 'Prasanta Patro',
-      live: 'https://prasantapatro.com/',
-      carousel: ['images/patro1.png', 'images/patro2.png', 'images/patro3.png', 'images/patro4.png'],
-      description: `<p> Worked with my teammate to manage and customized the WordPress site for Prasanta Patro, focusing on content updates, SEO optimization, and design enhancements.
-Handled plugin configuration, improved page layouts, and ensured mobile responsiveness.
-Provided ongoing support for site maintenance and content management.</p>`,
-      techStacks: ['WordPress', 'Elementor', 'SEO', 'PHP', 'CSS']
     }
   ]
 };
@@ -427,10 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 }
-                // Specific override for WordPress if it's still not found but text matches
-                if (!projectDetailsOverlayData[targetCategory] && categoryNameFromCard.toLowerCase().includes('wordpress') && projectDetailsOverlayData['WordPress']) {
-                    targetCategory = 'WordPress';
-                }
+
 
 
                 if (projectDetailsOverlayData[targetCategory]) {
