@@ -12,22 +12,22 @@ const projectDetailsOverlayData = {
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
     },
     {
-      banner: 'images/srkr.png',
+      banner: 'images/saana-banner.png',
       title: 'SAANA – SRKREC Alumni Association of North America',
       category: 'Web Development',
       client: 'SAANA',
       live: 'https://www.thesaana.org/',
-      carousel: ['images/srkr1.png', 'images/srkr2.png', 'images/srkr3.jpg', 'images/srkr4.jpg'],
+      carousel: ['images/saana1.png', 'images/saana2.png', 'images/saana3.png'],
       description: `<p>Enhanced the official website by building admin panels, improving alumni data management and announcements workflows, and refining UI/UX for a better user experience.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP']
     },
     {
-      banner: 'images/jaithra_banner.png',
+      banner: 'images/jaitra-banner.png',
       title: 'JAITRA 2026 – AP\'s Premier Engineering Sports Carnival Website',
       category: 'Web Development',
       client: 'SRKR Engineering College',
       live: 'https://jaithra2026.in/',
-      carousel: ['images/jaithra_banner.png', 'images/srkr1.png', 'images/srkr2.png'],
+      carousel: ['images/jaitra1.png', 'images/jaitra2.png', 'images/jaitra3.png'],
       description: `<p>Designed and developed the official sports carnival website for JAITRA 2026 at SRKR Engineering College, attracting <b>6,190+ visitors</b> during the event. Features a real-time live scoreboard ticker and sport-wise scoreboards for Volleyball (18 matches), Kabaddi (22 matches), Badminton (33 matches), and Pickleball (28 matches). Includes a secure admin dashboard built to update scores and publish live match statistics instantly.</p>`,
       techStacks: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Bootstrap', 'MySQL']
     }
