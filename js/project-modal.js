@@ -38,7 +38,7 @@ const projectDetailsOverlayData = {
       title: 'TermAssist – Privacy-First Terminal Assistant',
       category: 'Personal Projects',
       client: 'Personal',
-      live: 'https://github.com/Manoj-ruler',
+      live: 'https://termassist.vercel.app/',
       carousel: ['images/project-3.png'],
       description: `<p>Built a privacy-first terminal assistant that converts natural language queries into executable bash commands using the BM25 retrieval algorithm.</p>
 <p>Developed a full-stack ecosystem consisting of a CLI application and a web dashboard with authentication, analytics, query history, and custom snippet management.</p>
