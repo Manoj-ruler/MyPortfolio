@@ -44,11 +44,11 @@ The project aimed to create an interactive, hands-free gaming experience by comb
       techStacks: ['Python', 'OpenCV']
     }
   ],
-  'AI & Full Stack': [
+  'Personal Projects': [
     {
       banner: 'images/project-3.png',
       title: 'TermAssist – Privacy-First Terminal Assistant',
-      category: 'AI & Full Stack',
+      category: 'Personal Projects',
       client: 'Personal',
       live: 'https://github.com/Manoj-ruler',
       carousel: ['images/project-3.png'],
@@ -61,7 +61,7 @@ The project aimed to create an interactive, hands-free gaming experience by comb
     {
       banner: 'images/project-1.png',
       title: 'StudySensei – AI-Powered Learning Platform',
-      category: 'AI & Full Stack',
+      category: 'Personal Projects',
       client: 'Personal',
       live: 'https://github.com/Manoj-ruler',
       carousel: ['images/project-1.png'],
